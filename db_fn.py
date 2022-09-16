@@ -26,12 +26,12 @@ def get_task(task):
 	return data
 
 def get_task_by_status(task_status):
-	c.execute('SELECT * FROM tasktable WHERE task_status="{}"'.format(task_status))
+	c.execute('SELECT * FROM tasktable WHERE task_stat="{}"'.format(task_status))
 	data = c.fetchall()
 
 
 def edit_task_data(new_task,new_task_status,new_task_date,task,task_status,task_due_date):
-	c.execute("UPDATE tasktable SET task =?,task_status=?,task_due_date=? WHERE task=? and task_status=? and task_due_date=? ",(new_task,new_task_status,new_task_date,task,task_status,task_due_date))
+	c.execute("UPDATE tasktable SET task =?,task_stat=?,task_date=? WHERE task=? and task_stat=? and task_date=? ",(new_task,new_task_status,new_task_date,task,task_status,task_due_date))
 	conn.commit()
 	data = c.fetchall()
 

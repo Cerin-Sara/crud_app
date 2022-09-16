@@ -51,7 +51,7 @@ elif choice == "Update":
 		list_of_tasks = [i[0] for i in view_all_task_names()]
 		selected_task = st.selectbox("Task",list_of_tasks)
 		task_result = get_task(selected_task)
-
+    
 		if task_result:
 			task = task_result[0][0]
 			task_status = task_result[0][1]
